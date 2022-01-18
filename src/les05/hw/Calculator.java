@@ -5,7 +5,7 @@ import les04.hw.Task_4_3;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Set;
+
 
 public class Calculator {
 
@@ -27,7 +27,6 @@ public class Calculator {
             intNumber1 = Integer.valueOf(stringArray [0]);
         }catch (Exception e){
             romeNumber1 = stringArray [0];
-//            intNumber1 = numbers.getOrDefault (69,null);
         }
         try {
             intNumber2 = Integer.valueOf(stringArray [1]);
@@ -47,10 +46,13 @@ public class Calculator {
 
     static int [] getKeyInMapByValue (String romeNumber1, String romeNumber2){
         int [] keys = {0, 0};
+
         for (Map.Entry entry: numbers.entrySet()) {
+
             if (entry.getValue().equals(romeNumber1)) {
                 keys[0] = (int) entry.getKey();
             }
+
             if (entry.getValue().equals(romeNumber2)) {
                 keys[1] = (int) entry.getKey();
             }
@@ -59,8 +61,8 @@ public class Calculator {
     }
 
     static String  culculate (){
-        String result = null;
-        int key = 0;
+        String result;
+        int key;
         if (intNumber1 != 0 && intNumber2 != 0 ){
             result =  Integer.toString(intNumber1 + intNumber2);
             System.out.println(intNumber1 + " + " + intNumber2 + " = " + result);
